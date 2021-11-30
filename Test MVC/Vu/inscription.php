@@ -1,6 +1,6 @@
 <?php
-require('../Library/Controller/Controler.php');
-//require('../Library/Controller/ControllerInscrip.php');
+//require('../Library/Controller/Controler.php');
+require('../Library/Controller/ControllerInscrip.php');
 // require('../Library/Model/Model.php');
 // require('../Library/Model/ModelInscrip.php');
 
