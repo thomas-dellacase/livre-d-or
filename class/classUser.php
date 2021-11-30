@@ -126,6 +126,8 @@ class User {
 
             $oldlogin = $_SESSION['user']['login'];
 
+            var_dump($oldlogin);
+
             if(empty($_POST['login'])){
                 $login = $_SESSION['user']['login'];
             }
@@ -137,7 +139,7 @@ class User {
             $password = htmlspecialchars(trim($password));
             $confPass = htmlspecialchars(trim($confPass));
 
-            $checklog =$this->bdd->prepare("SELECT COUNT(login) AS num FROM 'utilisateurs' WHERE login = ':login'");
+            $checklog =$this->bdd->prepare("SELECT COUNT(login) AS num FROM utilisateurs WHERE login = :login");
             $checklog->bindValue(':login',$login, PDO::PARAM_STR);
             $checklog->execute();
 
@@ -150,23 +152,30 @@ class User {
                 $logPwd = 'Les 2 ,ots de passe ne sont pas les memes';
             }
             else{
-                $password= htmlspecialchars(trim($password));
+                $password = password_hash($password, PASSWORD_BCRYPT);
                 $update = $this->bdd->prepare("UPDATE utilisateurs SET login = :login, password = :password WHERE login = :oldlogin");
                 $update->bindValue(':login', $login, PDO::PARAM_STR);
                 $update->bindValue(':password', $password, PDO::PARAM_STR);
                 $update->bindValue(':oldlogin', $oldlogin, PDO::PARAM_STR);
-                $upUser->execute();
-                
+                $update->execute();
+
+                $stmt = $this->bdd->prepare("SELECT * FROM utilisateurs WHERE login = :login");
+                $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+                $stmt->execute();
+
+                $upUser = $stmt->fetch(PDO::FETCH_ASSOC);
+
                 if (isset($upUser)){
-                    $this-> id = $user['id'];
-                    $this-> login = $user['login'];
-                    $this-> password = $user['password'];
-                    $_SESSION['user'] = [
-                        'id'=>$this-> id,
-                        'login'=>$this-> login,
-                        'password'=>$this-> password,
-                    ];
-                    $winUp = 'Update reussi';
+                    $_SESSION['user'] = $upUser;
+                    // $this-> id = $user['id'];
+                    // $this-> login = $user['login'];
+                    // $this-> password = $user['password'];
+                    // $_SESSION['user'] = [
+                    //     'id'=>$this-> id,
+                    //     'login'=>$this-> login,
+                    //     'password'=>$this-> password,
+                    // ];
+                    $winUp = 'Update reussi'. $_SESSION['user']['login'];
                 }
                 else{
                     $error = "Erreur: ". $e->getMessage();
