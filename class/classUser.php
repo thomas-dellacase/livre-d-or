@@ -145,7 +145,7 @@ class User {
 
             $row = $checklog->fetch(PDO::FETCH_ASSOC);
 
-            if($row['num'] > 0){
+            if($row['num'] > 0 && $login != $oldlogin){
                 $logUp = 'Ce login existe deja.';
             }
             elseif($_POST['pwd'] != $_POST['confpwd']){
