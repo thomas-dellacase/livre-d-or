@@ -1,9 +1,9 @@
 <?php
 class Db{
-    private $host = 'localhost';
-    private $username = 'root';
-    private $dbPassword = 'root';
-    private $database = 'livreor';
+    private $host = 'localhost:3306';
+    private $username = 'thomas.dellacase';
+    private $dbPassword = 'ProjetPP2';
+    private $database = 'thomas-dellacase_livre-or';
     public $bdd = '';
 
     public function __construct($host = null, $username = null, $dbPassword = null, $database = null){
