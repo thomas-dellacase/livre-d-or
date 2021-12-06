@@ -1,7 +1,7 @@
 <?php
 class Db{
     private $host = 'localhost:3306';
-    private $username = 'thomas.dellacase';
+    private $username = 'thomas-dellacase';
     private $dbPassword = 'ProjetPP2';
     private $database = 'thomas-dellacase_livre-or';
     public $bdd = '';
