@@ -1,0 +1,48 @@
+#bodyliv{
+    min-height:100vh;
+    background-image:url(../ressources/momroom.png);
+    background-size: contain;
+    background-repeat: norepeat;
+}
+#mainLiv{
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+#h1Liv{
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+td{
+padding: 3%;
+}
+#arth1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#articleTable{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#tableLiv {
+    color: chartreuse;
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.9);
+}
+#articleTable{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}

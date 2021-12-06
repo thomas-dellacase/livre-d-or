@@ -4,22 +4,21 @@ require '../class/classUser.php';
 require '../function/db.php';
 //$bdd = new Db;
 
-if(!(isset($_SESSION['user']))){
-    $_SESSION['user'] = '';
-}
+
 if(isset($_POST['submit'])){
     $connecter = new User();
     $connecter->connectUser($_POST['login'], $_POST['pwd']);
+    header("Location:../Index.php");
 }
-var_dump($_SESSION);
+//var_dump($_SESSION['user']);
 
 ?>
 <?php
 require '../template/header.php'
 ?>
-<body>
-    <main>
-    <h1><?php if(isset($_SESSION['user']['login']) && $_SESSION['user']['login'] != ''){echo "Vous etes deja connecter ". $_SESSION['user']['login']. "<br>";
+<body id="bodyCo">
+    <main id="mainCo">
+    <h1 id="h1Co"><?php if(isset($_SESSION['user']['login']) && $_SESSION['user']['login'] != ''){echo "Vous etes deja connecter ". $_SESSION['user']['login']. "<br>";
       }elseif(isset($failedlog)){echo $failedlog;} ?></h1>
 
         <article id="artco">

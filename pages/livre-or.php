@@ -10,24 +10,26 @@ if(isset($_POST['submitCom'])){
 $dComment = new Comment();
 $dComment->displayComment();
 
+//var_dump($_SESSION['user']);
+
 ?>
 <?php
 require '../template/header.php';
 ?>
-<body>
-    <main>
-        <article>
+<body id="bodyliv">
+    <main id="mainLiv"> 
+        <article id="arth1">
             <section>
-                <h1>Livre d'or</h1>
+                <h1 id = "h1Liv">Livre d'or</h1>
             </section>
         </article>
-        <article>
+        <article id="articleTable">
             <scetion>
-                <table>
+                <table id = "tableLiv">
                     <thead>
-                        <tr> Commentaire </tr>
-                        <tr> Date </tr>
-                        <tr> Login </tr>   
+                        <th> Commentaire </th>
+                        <th> Posté le </th>
+                        <th> Par l'utilisateurs </th>   
                 </thead>
                 <tbody>
                 <?php
@@ -42,7 +44,7 @@ require '../template/header.php';
                 </tbody>
                 </table>
             </scetion>
-        </article>
+        </article id="artText">
         <?php
             if(isset($_SESSION['user'])){
                 require 'commentaire.php';

@@ -1,0 +1,46 @@
+body{
+    min-height:100vh;
+    background-image:url(../ressources/ressources.jpeg);
+    background-size: cover;
+    background-repeat: norepeat;
+}
+main{
+    min-height:100vh;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    color: white;
+}
+h2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#art{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#secH{
+    width: 70%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:rgba(0, 0, 0, 0.9);
+    color: chartreuse;
+    padding: 2%;
+}
+#sectext{
+    width: 70%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:rgba(0, 0, 0, 0.9);
+    color: chartreuse;
+    padding: 2%;
+}

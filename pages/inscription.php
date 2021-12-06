@@ -6,21 +6,26 @@ require '../function/db.php';
 if(isset($_POST['submit'])){
     $connecter = new User();
     $connecter->inscription($_POST['login'], $_POST['pwd'], $_POST['confpwd']);
+    header("Location:../Index.php");
 }
 
-if(isset($regfailed)){
-    echo $regfailed;
-}
-if(isset($pdwfailed)){
-    echo $pdwfailed;
-}
-
+//var_dump($_SESSION['user']);
 ?>
 <?php
 require '../template/header.php'
 ?>
-<body>
-    <main>
+<body id="bodyIns">
+    <main id="mainIns">
+        <article>
+            <h1 id ="h1Ins"><?php
+                if(isset($regfailed)){
+                    echo $regfailed;
+                }
+                if(isset($pdwfailed)){
+                    echo $pdwfailed;
+                }
+            ?></h1>
+        </article>
     <form method="POST">
                 <div class="row">
                     <div class="col">

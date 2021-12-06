@@ -18,6 +18,9 @@ class User {
         //     $_SESSION['user'] = '';
         // }
         //$passwordU = $_POST['pwd'];
+        
+        $_SESSION['user'] = "";
+        
 
         $login =  htmlspecialchars(trim($login));
         $password = htmlspecialchars(trim($password));
@@ -28,7 +31,7 @@ class User {
         $connectUser->bindValue(':login', $login, PDO::PARAM_STR);
         $connectUser->execute();
         $user = $connectUser->fetch(PDO::FETCH_ASSOC);
-        var_dump($user);
+        //var_dump($user);
 
         if(!(empty($user))){
             $checkPwd = $user['password'];
@@ -126,7 +129,7 @@ class User {
 
             $oldlogin = $_SESSION['user']['login'];
 
-            var_dump($oldlogin);
+            //var_dump($oldlogin);
 
             if(empty($_POST['login'])){
                 $login = $_SESSION['user']['login'];
