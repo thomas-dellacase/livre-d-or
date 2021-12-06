@@ -28,7 +28,8 @@ require 'template/headerIndex.php'
                     The company would go on to buy out numerous other businesses, investing in almost every sector, 
                     and had a controlling stake in a vast number of diverse corporations. According to some, 
                     Weyland-Yutani owned “pretty much everything” by the 2150s. 
-                    Many of the companies wholly or partly owned by Weyland-Yutani continued to operate under their own brand.</p>
+                    Many of the companies wholly or partly owned by Weyland-Yutani continued to operate under their own brand.
+                </p>
             </section>
         </article>
         
