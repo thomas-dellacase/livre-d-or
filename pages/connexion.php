@@ -8,7 +8,7 @@ require '../function/db.php';
 if(isset($_POST['submit'])){
     $connecter = new User();
     $connecter->connectUser($_POST['login'], $_POST['pwd']);
-    header("Location:../Index.php");
+    header("Location:../index.php");
 }
 //var_dump($_SESSION['user']);
 

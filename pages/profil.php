@@ -6,7 +6,7 @@ require '../function/db.php';
 if(isset($_POST['submit'])){
     $updateUser = new User();
     $updateUser->update($_POST['login'], $_POST['pwd'], $_POST['confpwd']);
-    header('Location:../Index.php');
+    header('Location:../index.php');
     if(isset($winUp)){
          $erreur = $winUp ;
     }elseif(isset($logUp)){

@@ -6,7 +6,7 @@ require '../function/db.php';
 if(isset($_POST['submit'])){
     $connecter = new User();
     $connecter->inscription($_POST['login'], $_POST['pwd'], $_POST['confpwd']);
-    header("Location:../Index.php");
+    header("Location:../index.php");
 }
 
 //var_dump($_SESSION['user']);
